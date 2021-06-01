@@ -6,6 +6,7 @@ pipeline {
      agent { 
         label 'master'
         }
+     triggers { pollSCM('*****')}
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))  	//save last 10 builds
         timestamps()
@@ -18,7 +19,7 @@ pipeline {
         }
         stage("Second step") {
            steps {
-                firefox '/home/tatiana/Desktop/project/index.html'
+                echo "trigger done success"
            }
        }
     }
