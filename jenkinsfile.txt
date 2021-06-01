@@ -16,10 +16,10 @@ pipeline {
                 echo "HI"
             }
         }
-    //    stage("Second step") {
-      //      steps {
-         //       firefox "/home/tatiana/Desktop/project/index.html"
-           // }
-       //}
+        stage("Second step") {
+           steps {
+                firefox "/home/tatiana/Desktop/project/index.html"
+           }
+       }
     }
 }
