@@ -1,0 +1,25 @@
+#!groovy
+// Check ub1 properties
+properties([disableConcurrentBuilds()])
+
+pipeline {
+    agent { 
+        label 'master'       //master brench
+        }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))  	//save last 10 builds
+        timestamps()
+    }
+    stages {
+        stage("First step") {
+            steps {
+                echo '"HI"
+            }
+        }
+        stage("Second step") {
+            steps {
+                firefox "/home/tatiana/Desktop/project/index.html"
+            }
+        }
+    }
+}
