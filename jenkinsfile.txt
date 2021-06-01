@@ -3,9 +3,7 @@
 properties([disableConcurrentBuilds()])
 
 pipeline {
-    agent { 
-        label 'main'       //master brench
-        }
+   
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))  	//save last 10 builds
         timestamps()
@@ -16,10 +14,10 @@ pipeline {
                 echo "HI"
             }
         }
-        stage("Second step") {
-            steps {
-                firefox "/home/tatiana/Desktop/project/index.html"
-            }
-        }
+    //    stage("Second step") {
+      //      steps {
+         //       firefox "/home/tatiana/Desktop/project/index.html"
+           // }
+      //  }
     }
 }
