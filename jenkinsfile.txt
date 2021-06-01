@@ -20,6 +20,6 @@ pipeline {
       //      steps {
          //       firefox "/home/tatiana/Desktop/project/index.html"
            // }
-       }
+       //}
     }
 }
